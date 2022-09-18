@@ -15,7 +15,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const MovingObject = __webpack_require__(/*! ./moving_object/moving_object */ \"./src/moving_object/moving_object.js\");\n\nwindow.MovingObject = MovingObject;\n\nconst canvas = document.getElementById('game-canvas');\n\nconsole.log('Webpack is working!');\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const MovingObject = __webpack_require__(/*! ./moving_object/moving_object */ \"./src/moving_object/moving_object.js\");\n\nwindow.MovingObject = MovingObject;\n\nwindow.addEventListener('DOMContentLoaded', function () {\n  const canvas = document.getElementById('game-canvas');\n  const ctx = canvas.getContext('2d');\n})\n\nconsole.log('Webpack is working!');\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
