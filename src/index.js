@@ -1,4 +1,4 @@
-const MovingObject = require("./moving_object/moving_object");
+const MovingObject = require("./moving_objects/moving_object");
 const Util = require("./utilities/util");
 
 window.MovingObject = MovingObject;
