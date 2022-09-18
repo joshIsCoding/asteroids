@@ -15,7 +15,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const MovingObject = __webpack_require__(/*! ./moving_object/moving_object */ \"./src/moving_object/moving_object.js\");\n\nwindow.MovingObject = MovingObject;\n\nwindow.addEventListener('DOMContentLoaded', function () {\n  const canvas = document.getElementById('game-canvas');\n  const ctx = canvas.getContext('2d');\n})\n\nconsole.log('Webpack is working!');\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const MovingObject = __webpack_require__(/*! ./moving_object/moving_object */ \"./src/moving_object/moving_object.js\");\nconst Util = __webpack_require__(/*! ./utilities/util */ \"./src/utilities/util.js\");\n\nwindow.MovingObject = MovingObject;\nwindow.Util = Util;\n\nwindow.addEventListener('DOMContentLoaded', function () {\n  const canvas = document.getElementById('game-canvas');\n  const ctx = canvas.getContext('2d');\n})\n\nconsole.log('Webpack is working!');\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -26,6 +26,16 @@ eval("const MovingObject = __webpack_require__(/*! ./moving_object/moving_object
 /***/ ((module) => {
 
 eval("function MovingObject(opts) {\n  this.xPos = opts.pos[0];\n  this.yPos = opts.pos[1];\n  this.vel = opts.vel;\n  this.radius = opts.radius;\n  this.color = opts.color;\n}\n\nMovingObject.prototype.draw = function(ctx) {\n  ctx.beginPath();\n  ctx.fillStyle = this.color;\n  ctx.arc(this.xPos, this.yPos, this.radius, 0, 360);\n  ctx.closePath();\n  ctx.fill();\n}\n\nMovingObject.prototype.move = function() {\n  this.xPos += this.vel[0];\n  this.yPos += this.vel[1];\n}\n\nmodule.exports = MovingObject;\n\n\n//# sourceURL=webpack:///./src/moving_object/moving_object.js?");
+
+/***/ }),
+
+/***/ "./src/utilities/util.js":
+/*!*******************************!*\
+  !*** ./src/utilities/util.js ***!
+  \*******************************/
+/***/ ((module) => {
+
+eval("const Util = {\n  inherits: function inherits(childClass, parentClass) {\n    childClass.prototype = Object.create(parentClass.prototype);\n    childClass.prototype.constructor = parentClass;\n  }\n};\n\nmodule.exports = Util;\n\n\n//# sourceURL=webpack:///./src/utilities/util.js?");
 
 /***/ })
 
